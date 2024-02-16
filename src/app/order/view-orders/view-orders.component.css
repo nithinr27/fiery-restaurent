@@ -1,0 +1,27 @@
+.view-order-info {
+  background-image: url("https://wallpaperaccess.com/full/1737995.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  background-color: rgb(137, 224, 224);
+  border-radius: 10%;
+  border-color: black;
+}
+.icon1 {
+  text-align: center;
+}
+.card-body {
+  padding: 10%;
+}
+.top {
+  height: 20px;
+  width: 200px;
+}
+.deletebutton {
+  text-align: center;
+}

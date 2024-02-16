@@ -1,0 +1,203 @@
+<div class="container view-order-info">
+  <!-- Component content goes here -->
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div>
+    <br />
+    <br />
+
+    <!-- <div>
+    <div class="table_responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>order_no</th>
+            <th>name</th>
+            <th>order_date</th>
+            <th>items_ordered</th>
+            <th>order_total</th>
+            <th>tax_total</th>
+            <th>grand_total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of orderdata">
+            <td>{{ a.order_no }}</td>
+            <td>{{ a.name }}</td>
+            <td>{{ a.order_date }}</td>
+            <td>{{ a.items_ordered }}</td>
+            <td>{{ a.order_total }}</td>
+            <td>{{ a.tax_total }}</td>
+            <td>{{ a.grand_total }}</td>
+            <td></td>
+
+            <td>
+              <button class="btn btn-warning" (click)="updatefetch(a.order_no)">
+                update order
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+
+    <button (click)="check()" class="btn btn-info btn-lg">Place order</button>
+    <br />
+    <br />
+    <button (click)="getAllorders()" class="btn btn-success btn-lg">
+      view-orders
+    </button>
+    <br />
+    <br />
+    <div class="form">
+      <div class="card-body">
+        <p *ngIf="isadd; then myif"></p>
+        <p *ngIf="isupdate; then myedit"></p>
+        <ng-template #myif #myedit>
+          <label for="order_no" class="form"
+            ><h5 style="color: rgb(9, 9, 9)">orderno:</h5></label
+          >
+          <input id="order_no" class="form" [(ngModel)]="jdata.order_no" />
+          <br />
+
+          <label class="form" for="name"
+            ><h5 style="color: rgb(5, 4, 4)">Name of cust:</h5></label
+          >
+          <input id="name" [(ngModel)]="jdata.name" />
+          <br />
+
+          <label class="form" for="order_date"
+            ><h5 style="color: rgb(2, 2, 2)">Age of cust :</h5></label
+          >
+          <input class="form" id="order_date" [(ngModel)]="jdata.order_date" />
+          <br />
+
+          <label class="form" for="date"
+            ><h5 style="color: rgb(4, 4, 4)">ordered date:</h5></label
+          >
+          <input
+            class="form"
+            id="items_ordered"
+            [(ngModel)]="jdata.order_date"
+          />
+          <br />
+
+          <label class="form" for="items_ordered" style="color: rgb(12, 12, 12)"
+            ><h5>Quantity:</h5></label
+          >
+          <input
+            class="form"
+            id="items_ordered"
+            [(ngModel)]="jdata.items_ordered"
+          />
+          <br />
+
+          <!-- <label class="form" for="order_total">order total:</label>
+          <input
+            class="form"
+            id="order_total"
+            [(ngModel)]="jdata.order_total"
+          />
+          <br />
+
+          <label class="form" for="tax_total">Tax_total:</label>
+          <input class="form" id="tax_total" [(ngModel)]="jdata.Tax_total" />
+          <br /> -->
+
+          <label class="form" for="grand_total"
+            ><h5 style="color: rgb(7, 7, 7)">Grand total:</h5></label
+          >
+          <input
+            class="form"
+            id="grand_total"
+            [(ngModel)]="jdata.Grand_total"
+          />
+          <br />
+          <br />
+          <br />
+          <p *ngIf="isadd; then save; else update"></p>
+          <br />
+          <ng-template #save>
+            <button type="submit" class="btn btn-success" (click)="postJson()">
+              Save
+            </button>
+          </ng-template>
+
+          <ng-template #update>
+            <button
+              type="submit"
+              class="btn btn-success"
+              (click)="updateorder($event, jdata.order_no, jdata)"
+            >
+              Update
+            </button>
+          </ng-template>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-4 g-3">
+    <div class="col" *ngFor="let a of orderdata">
+      <div class="card">
+        <div class="icon1">
+          <div class="text-center">
+            <img
+              src="https://cdn4.vectorstock.com/i/1000x1000/30/48/food-delivery-service-guy-carrying-vector-32523048.jpg"
+              class="rounded-circle img-fluid"
+              alt="Rounded image"
+              style="width: 50px; height: 50px"
+            />
+          </div>
+          <!-- <div class="top">
+            <img
+              src="https://www.entrepreneurshipinabox.com/wp-content/uploads/online-food-ordering-system.jpg"
+              class="img-fluid"
+              alt="..."
+            />
+            
+          </div> -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-bag-check-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"
+            />
+          </svg>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ a.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Order no: {{ a.order_no }}
+          </h6>
+          <p class="card-text">Date: {{ a.order_date }}</p>
+          <!-- <p class="card-text">No of items: {{ a.items_ordered }}</p> -->
+          <p class="card-text">Grand total: {{ a.Grand_total }}</p>
+          <div class="deletebutton">
+            <!-- <button (click)="nav(a.order_no)" type="button" class="btn btn-warning">
+              view-order-info
+            </button> -->
+            <!-- <button>
+              <a (click)="nav(a.id)" routerLink="view-orders-info"></a>VI</button> -->
+            <li>
+              <a routerLink="view-orders-info" class="nav-link" href="#"
+                ><h4 style="color: rgb(0, 0, 0)">view info</h4></a
+              >
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

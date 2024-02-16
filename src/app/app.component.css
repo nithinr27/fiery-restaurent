@@ -1,0 +1,55 @@
+/* .vieworderinfo {
+    background-image: url("https://media.istockphoto.com/id/1258733624/vector/herbs-and-spices-seamless-pattern-ginger-spinach-onion-pepper-garlic-fennel-packaging.jpg?s=612x612&w=0&k=20&c=6Fioel8Vz9YjpamIfhS68KzPhPfgPbcX5gs_6fJQPzQ=");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+body {
+  /* background-image: url('fiery-restaurant-background.jpg'); */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+p {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background-color: #b3351e;
+  border-bottom: 1px solid #91d2d7;
+  z-index: 10;
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+}
+
+.navbar .navbar-nav {
+  margin-left: auto;
+}
+
+.navbar .form-inline {
+  margin-right: auto;
+}
+.dropdown {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}

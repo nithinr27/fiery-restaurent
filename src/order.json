@@ -1,0 +1,91 @@
+{
+  "orders": [
+    {
+      "order_no": "1",
+      "name": "Vettel",
+      "order_date": "2-2-24",
+      "ItemsOrdered": [
+        {
+          "ItemNo": 1,
+          "Name": "Pizza",
+          "Quantity": 20,
+          "Price": 500
+        }
+      ],
+      "items_ordered": "2",
+      "order_total": "1200",
+      "Tax_total": "232",
+      "Grand_total": "1432",
+      "id": "1"
+    },
+    {
+      "order_no": "2",
+      "name": "charles",
+      "order_date": "4-2-24",
+      "ItemsOrdered": [
+        {
+          "ItemNo": 2,
+          "Name": "mozarella",
+          "Quantity": 5,
+          "Price": 800
+        }
+      ],
+      "items_ordered": "4",
+      "order_total": "2000",
+      "Tax_total": "360",
+      "Grand_total": "2360",
+      "id": "2"
+    },
+    {
+      "order_no": "3",
+      "name": "oscar",
+      "order_date": "7-2-24",
+      "ItemsOrdered": [
+        {
+          "ItemNo": 4,
+          "Name": "burger",
+          "Quantity": 1,
+          "Price": 300
+        }
+      ],
+      "items_ordered": "8",
+      "order_total": "9000",
+      "Tax_total": "1620",
+      "Grand_total": "10620",
+      "id": "3"
+    },
+    {
+      "id": "bf81",
+      "order_no": "5",
+      "name": "Daniel",
+      "order_date": "23",
+      "items_ordered": "2",
+      "order_total": "",
+      "Tax_total": "",
+      "Grand_total": "2313"
+    }
+  ],
+  "Items": [
+    {
+      "item_no": "1",
+      "name": "mozarella",
+      "quantity": "2",
+      "price": "800",
+      "id": "b618"
+    },
+    {
+      "item_no": "2",
+      "name": "pizza",
+      "quantity": "4",
+      "price": "800",
+      "id": "8a3e"
+    },
+    {
+      "item_no": "3",
+      "name": "kheer",
+      "quantity": "6",
+      "price": "1800",
+      "id": "4ed6"
+    }
+  ]
+}
